@@ -1,3 +1,24 @@
 # Widn
 
 Show your current schedule on discord based on your calendar.
+
+## Contributor
+
+<table style="text-align: center;">
+<tr>
+    <td>
+        <a href="https://github.com/hyp3rflow"><img src="https://avatars.githubusercontent.com/u/49385012?s=460&u=e06cb5f0223d989fe1ec9bfc301da29baad7575c&v=4" style="border-radius: 100%;width: 100px"/></a>
+    </td>
+    <td>
+        <a href="https://github.com/BeLeap"><img src="https://avatars.githubusercontent.com/u/46488521?s=460&u=de1a336b358d417729422352e64c6b7bcd1cff37&v=4" style="border-radius: 100%;width: 100px"/></a>
+    </td>
+</tr>
+<tr>
+    <td>
+        <a href="https://github.com/hyp3rflow">hyp3rflow</a>
+    </td>
+    <td>
+        <a href="https://github.com/BeLeap">BeLeap</a>
+    </td>
+</tr>
+</table>
