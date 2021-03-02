@@ -5,13 +5,7 @@ Show your current schedule on discord based on your calendar.
 ## Run(Development)
 
 ```sh
-yarn react-start
-```
-
-ON ANOTHER TERMINAL INSTANCE
-
-```sh
-yarn electron-start
+yarn electron-dev
 ```
 
 ## Build

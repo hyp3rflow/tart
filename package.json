@@ -1,7 +1,7 @@
 {
   "name": "widn",
   "version": "0.1.0",
-  "main": "public/electron-starter.js",
+  "main": "public/electron.js",
   "description": "Show your current schedule on discord based on your calendar.",
   "author": "hyperflow <hyperflow@kakao.com>",
   "license": "MIT",
@@ -10,9 +10,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "react-start": "cross-env BROWSER=none yarn start",
-    "electron-start": "cross-env ELECTRON_START_URL=http://localhost:3000 electron .",
-    "electron-pack": "yarn build && electron-builder build -c.extraMetadata.main=build/electron-starter.js"
+    "electron-dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "preelectron-pack": "yarn build",
+    "electron-pack": "build --em.main=build/electron.js"
   },
   "eslintConfig": {
     "extends": [
@@ -41,6 +41,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "cross-env": "^7.0.3",
+    "electron-is-dev": "^2.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.3",
@@ -48,7 +49,20 @@
     "web-vitals": "^1.0.1"
   },
   "devDependencies": {
+    "concurrently": "^6.0.0",
     "electron": "^12.0.0",
-    "electron-builder": "^22.10.5"
+    "electron-builder": "^22.10.5",
+    "wait-on": "^5.2.1"
+  },
+  "homepage": "./",
+  "build": {
+    "appId": "com.example.electron-cra",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
   }
 }
