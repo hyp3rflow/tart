@@ -1,3 +1,3 @@
 # Widn
 
-Show your current schedule based on your calendar.
+Show your current schedule on discord based on your calendar.
