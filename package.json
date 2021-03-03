@@ -12,7 +12,7 @@
     "react-test": "react-scripts test",
     "react-eject": "react-scripts eject",
     "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\"",
-    "etsc": "tsc --esModuleInterop true public/electron.ts",
+    "etsc": "tsc --esModuleInterop true public/electron.ts public/modules/preload.ts",
     "build:win": "yarn tc && yarn react-build && electron-builder --win --x64",
     "build:mac": "yarn tc && yarn react-build && electron-builder --mac",
     "postinstall": "electron-builder install-app-deps && patch-package"
