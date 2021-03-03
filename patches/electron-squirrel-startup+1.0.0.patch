@@ -1,0 +1,18 @@
+diff --git a/node_modules/electron-squirrel-startup/index.js b/node_modules/electron-squirrel-startup/index.js
+index 46a76fc..c651bdb 100644
+--- a/node_modules/electron-squirrel-startup/index.js
++++ b/node_modules/electron-squirrel-startup/index.js
+@@ -18,11 +18,11 @@ var check = function() {
+     var target = path.basename(process.execPath);
+ 
+     if (cmd === '--squirrel-install' || cmd === '--squirrel-updated') {
+-      run(['--createShortcut=' + target + ''], app.quit);
++      run(['--createShortcut', target], app.quit);
+       return true;
+     }
+     if (cmd === '--squirrel-uninstall') {
+-      run(['--removeShortcut=' + target + ''], app.quit);
++      run(['--removeShortcut', target], app.quit);
+       return true;
+     }
+     if (cmd === '--squirrel-obsolete') {
