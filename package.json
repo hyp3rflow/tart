@@ -1,5 +1,5 @@
 {
-  "name": "widn",
+  "name": "tart",
   "version": "0.1.0",
   "main": "public/electron.js",
   "description": "Show your current schedule on discord based on your calendar.",
@@ -44,7 +44,7 @@
     "react-scripts": "4.0.3",
     "styled-components": "^5.2.1",
     "electron-squirrel-startup": "^1.0.0",
-    "electron-window-state": "^5.0.3",
+    "electron-window-state": "^5.0.3"
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.7",
@@ -64,11 +64,11 @@
     "patch-package": "^6.4.4",
     "typescript": "^4.1.2",
     "wait-on": "^5.2.1",
-    "cross-env": "^7.0.3",
+    "cross-env": "^7.0.3"
   },
   "build": {
-    "productName": "WIDN",
-    "appId": "com.electron.WIDN",
+    "productName": "TART",
+    "appId": "com.electron.TART",
     "asar": true,
     "directories": {
       "buildResources": "build_resource/",
@@ -76,13 +76,13 @@
     },
     "artifactName": "${productName} ${version} setup.${ext}",
     "protocols": {
-      "name": "WIDN",
+      "name": "TART",
       "schemes": [
-        "widn"
+        "tart"
       ]
     },
     "extraMetadata": {
-      "homepage": "https://github.com/hyp3rflow/widn"
+      "homepage": "https://github.com/hyp3rflow/tart"
     },
     "win": {
       "target": [
@@ -99,7 +99,7 @@
       ]
     },
     "dmg": {
-      "title": "WIDN"
+      "title": "TART"
     }
   }
 }

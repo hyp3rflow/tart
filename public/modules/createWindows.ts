@@ -22,7 +22,7 @@ export function createMainWindow() {
         y: windowState.y,
         width: windowState.width,
         height: windowState.height,
-        title: "WIDN",
+        title: "TART",
         webPreferences: {
             nodeIntegration: false,
             contextIsolation: true,
