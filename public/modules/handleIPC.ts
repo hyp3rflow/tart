@@ -8,10 +8,8 @@ ipcMain.on('window-close', (e) => {
 ipcMain.on('window-maximize', (e) => {
   const window = BrowserWindow.getFocusedWindow();
 
-  if (window?.isMaximized())
-    window?.unmaximize();
-  else
-    window?.maximize();
+  if (window?.isMaximized()) window?.unmaximize();
+  else window?.maximize();
 });
 
 ipcMain.on('window-minimize', (e) => {
