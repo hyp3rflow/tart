@@ -11,6 +11,10 @@ const WindowTemplateWrapper = styled.div<WindowTemplateWrapperProps>`
   width: ${(props) => props.width || '100%'};
   padding: ${(props) => props.padding || '14px'};
   background-color: ${(props) => props.backgroundColor || '#343a40'};
+
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 30px);
 `;
 
 interface WindowTemplateProps extends WindowTemplateWrapperProps {}
