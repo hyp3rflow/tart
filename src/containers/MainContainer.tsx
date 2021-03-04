@@ -2,9 +2,22 @@ import Card from 'components/base/Card';
 import RoundButton from 'components/base/RoundButton';
 import WindowTemplate from 'components/base/WindowTemplate';
 import Clock from 'components/main/Clock';
-import React from 'react';
+import PendingSchedules from 'components/main/PendingSchedules';
+import React, { useState } from 'react';
 import { VscSettingsGear } from 'react-icons/vsc';
 import styled from 'styled-components';
+
+const MainHeader = styled.div`
+  display: flex;
+`;
+
+const ScheduleTime = styled.div`
+  color: #adb5bd;
+`;
+
+const MainTitle = styled.h1`
+  font-weight: 800;
+`;
 
 const SettingRoundButton = styled(RoundButton)`
   svg {
@@ -15,18 +28,40 @@ const SettingRoundButton = styled(RoundButton)`
   margin-left: auto;
 `;
 
-const MainButtonListWrapper = styled.div`
+const StyledButton = styled(RoundButton)`
+  & + & {
+    margin-left: 14px;
+  }
+`;
+
+interface ButtonListWrapperProps {
+  isOpened?: boolean;
+}
+
+const ButtonListWrapper = styled.div<ButtonListWrapperProps>`
   display: flex;
-  margin-bottom: 14px;
+  overflow: ${(props) => (props.isOpened ? 'inherit' : 'hidden')};
+
+  margin-top: ${(props) => (props.isOpened ? '14px' : '0')};
+  height: ${(props) => (props.isOpened ? 'auto' : '0px')};
+`;
+
+const HoverButton = styled(RoundButton)`
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
 `;
 
 const MainContainer: React.FC = () => {
+  const [opened, setOpened] = useState(false);
+
   return (
     <WindowTemplate>
-      <MainButtonListWrapper>
-        <RoundButton onClick={() => {}} shadow backgroundColor="#2f9e44">
-          디스코드 전송 중!
-        </RoundButton>
+      <MainHeader>
+        <MainTitle>타르트</MainTitle>
         <SettingRoundButton
           onClick={() => {}}
           width="50px"
@@ -37,11 +72,21 @@ const MainContainer: React.FC = () => {
         >
           <VscSettingsGear />
         </SettingRoundButton>
-      </MainButtonListWrapper>
-      <Card>
-        안녕하세요, tartUser님.
+      </MainHeader>
+      <div>
+        현재 시각
         <Clock />
+      </div>
+      <Card>
+        <ScheduleTime>현재 진행 중인 일정</ScheduleTime>
+        <h2>정보대학 상임위원회 회의</h2>
       </Card>
+      <PendingSchedules />
+      <HoverButton onClick={() => setOpened(!opened)} shadow></HoverButton>
+      <ButtonListWrapper isOpened={opened}>
+        <StyledButton onClick={() => {}}>디스코드 설정</StyledButton>
+        <StyledButton onClick={() => {}}>일정 관리</StyledButton>
+      </ButtonListWrapper>
     </WindowTemplate>
   );
 };
