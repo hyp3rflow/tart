@@ -1,6 +1,7 @@
-import { app, BrowserWindow, ipcMain } from 'electron';
+import { app } from 'electron';
 import isDev from 'electron-is-dev';
 import { createMainWindow } from './modules/createWindows';
+import './modules/handleIPC';
 
 if (require('electron-squirrel-startup')) app.quit();
 
@@ -16,7 +17,7 @@ app.on('ready', () => {
   if (isDev) {
     const {
       default: installExtension,
-      REACT_DEVELOPER_TOOLS,
+      REACT_DEVELOPER_TOOLS
     } = require('electron-devtools-installer');
 
     installExtension(REACT_DEVELOPER_TOOLS)
@@ -32,11 +33,3 @@ app.on('second-instance', () => {
 app.on('activate', (e, hasVisibleWindow) => {
   if (!hasVisibleWindow) createMainWindow();
 });
-
-ipcMain.on('window-close', (e) =>
-  BrowserWindow.fromWebContents(e.sender).close()
-);
-
-ipcMain.on('window-minimize', (e) =>
-  BrowserWindow.fromWebContents(e.sender).minimize()
-);
