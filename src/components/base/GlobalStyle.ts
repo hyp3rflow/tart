@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { ColorPalette } from 'utils/ColorUtils';
 
 export default createGlobalStyle`
     html {
@@ -7,9 +8,9 @@ export default createGlobalStyle`
   }
 
   body {
-    background: #f8f9fa;
+    background: ${ColorPalette.GRAY_BACKGROUND};
     min-height: 100%;
-    color: #222222;
+    color: ${ColorPalette.WHITE};
 
     margin: 0;
     padding: 0;
@@ -51,8 +52,8 @@ export default createGlobalStyle`
     margin: 0;
 
     ::selection {
-      background: #222222;
-      color: #f1f3f5;
+      background: ${ColorPalette.GRAY_BACKGROUND};
+      color: ${ColorPalette.WHITE};
     }
   }
 
