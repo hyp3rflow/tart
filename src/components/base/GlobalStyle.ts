@@ -60,4 +60,24 @@ export default createGlobalStyle`
   #root {
     overflow-y: auto;
   }
+
+  ::-webkit-scrollbar {
+    background: none;
+    
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    border: solid 2px transparent;
+    box-shadow: 0 0 10px 10px #2c2f33 inset;
+  }
+
+  ::-webkit-scrollbar:window-inactive {
+    width: 0;
+  }
+  
+  ::-webkit-scrollbar-thumb:window-inactive{
+    background: none;
+  }
 `;
