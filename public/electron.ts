@@ -37,10 +37,6 @@ ipcMain.on('window-close', (e) =>
   BrowserWindow.fromWebContents(e.sender).close()
 );
 
-ipcMain.on('window-maximize', (e) =>
-  BrowserWindow.fromWebContents(e.sender).maximize()
-);
-
 ipcMain.on('window-minimize', (e) =>
   BrowserWindow.fromWebContents(e.sender).minimize()
 );
