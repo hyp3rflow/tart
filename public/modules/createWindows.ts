@@ -12,7 +12,7 @@ export function createMainWindow() {
   }
 
   const windowState = windowStateKeeper({
-    defaultWidth: 440,
+    defaultWidth: 400,
     defaultHeight: 900,
     file: 'mainWindow.json',
   });
@@ -22,7 +22,7 @@ export function createMainWindow() {
     y: windowState.y,
     width: windowState.width,
     height: windowState.height,
-    minWidth: 440,
+    minWidth: 400,
     minHeight: 800,
     title: 'TART',
     webPreferences: {
