@@ -7624,10 +7624,10 @@ joi@^17.3.0:
     "@sideway/formula" "^3.0.0"
     "@sideway/pinpoint" "^2.0.0"
 
-jotai@^0.15.0:
-  version "0.15.0"
-  resolved "https://registry.yarnpkg.com/jotai/-/jotai-0.15.0.tgz#de8c1373ef12142ce3547c144acd08953bd95d67"
-  integrity sha512-pHjb8R9jn+Y+G01p8j94n0emFkJfrRlA1Ha2M2ZZyguHAF6PWMUaCF091qXR68rfMxfoEgM+i6DojTKBo7B6dg==
+jotai@^0.15.1:
+  version "0.15.1"
+  resolved "https://registry.yarnpkg.com/jotai/-/jotai-0.15.1.tgz#31d04b38c7eb0b0b33552c3d0009cb01cd1a68fe"
+  integrity sha512-ffC+CGYLyV6CiWZ2Pm2XcySzH3+AhaIdGN2LTmpOrbFQqH+JBPHQTRqw0G9ys7/6xhzhWDvBASigTaQQGEBubA==
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
@@ -12161,10 +12161,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@^4.1.2:
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.2.2.tgz#1450f020618f872db0ea17317d16d8da8ddb8c4c"
-  integrity sha512-tbb+NVrLfnsJy3M59lsDgrzWIflR4d4TIUjz+heUnHZwdF7YsrMTKoRERiIvI2lvBG95dfpLxB21WZhys1bgaQ==
+typescript@^4.2.3:
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.2.3.tgz#39062d8019912d43726298f09493d598048c1ce3"
+  integrity sha512-qOcYwxaByStAWrBf4x0fibwZvMRG+r4cQoTjbPtUlrWjBHbmCAww1i448U0GJ+3cNNEtebDteo/cHOR3xJ4wEw==
 
 unbox-primitive@^1.0.0:
   version "1.0.0"
