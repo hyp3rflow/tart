@@ -14,10 +14,16 @@ interface ButtonListWrapperProps {
 
 const ButtonListWrapper = styled.div<ButtonListWrapperProps>`
   display: flex;
-  overflow: ${(props) => (props.isOpened ? 'inherit' : 'hidden')};
+  overflow: hidden;
+  flex-shrink: 0;
 
-  margin-top: ${(props) => (props.isOpened ? '14px' : '0')};
-  height: ${(props) => (props.isOpened ? 'auto' : '0px')};
+  height: ${(props) => (props.isOpened ? '64px' : '0px')};
+
+  transition: height 0.25s linear;
+
+  ${StyledButton} {
+    margin-top: 14px;
+  }
 `;
 
 interface BottomMenuProps {

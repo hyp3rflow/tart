@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import { ColorPalette } from 'utils/ColorUtils';
 
 export default createGlobalStyle`
-    html {
+  html {
     font-size: 16px;
     height: 100%;
   }
@@ -55,10 +55,6 @@ export default createGlobalStyle`
       background: ${ColorPalette.GRAY_BACKGROUND};
       color: ${ColorPalette.WHITE};
     }
-  }
-
-  #root {
-    overflow-y: auto;
   }
 
   ::-webkit-scrollbar {
