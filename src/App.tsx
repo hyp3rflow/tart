@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router';
+import { Route, Switch } from 'react-router-dom';
 import GlobalStyle from 'components/base/GlobalStyle';
 import WindowFrame from 'components/base/WindowFrame';
 import WindowTemplate from 'components/base/WindowTemplate';
