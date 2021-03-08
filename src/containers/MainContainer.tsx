@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import RoundButton from 'components/base/RoundButton';
-import Clock from 'components/main/Clock';
-import PendingSchedules from 'components/main/PendingSchedules';
 import styled from 'styled-components';
 import Header from 'components/main/Header';
+import Clock from 'components/main/Clock';
 import CurrentSchedule from 'components/main/CurrentSchedule';
+import PendingSchedules from 'components/main/PendingSchedules';
+import RoundButton from 'components/base/RoundButton';
 import BottomMenu from 'components/main/BottomMenu';
 
 const HoverButton = styled(RoundButton)`

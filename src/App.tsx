@@ -2,9 +2,9 @@ import React from 'react';
 import { Route, Switch } from 'react-router';
 import GlobalStyle from 'components/base/GlobalStyle';
 import WindowFrame from 'components/base/WindowFrame';
+import WindowTemplate from 'components/base/WindowTemplate';
 import MainPage from 'pages/MainPage';
 import SettingsPage from 'pages/SettingsPage';
-import WindowTemplate from 'components/base/WindowTemplate';
 
 const App: React.FC = () => {
   return (
