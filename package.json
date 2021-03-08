@@ -1,18 +1,21 @@
 {
-  "name": "widn",
+  "name": "tart",
   "version": "0.1.0",
   "main": "public/electron.js",
   "description": "Show your current schedule on discord based on your calendar.",
   "author": "hyperflow <hyperflow@kakao.com>",
   "license": "MIT",
+  "homepage": "./",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "electron-dev": "concurrently \"cross-env BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
-    "preelectron-pack": "yarn build",
-    "electron-pack": "build --em.main=build/electron.js"
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build && cross-env-shell rm -rf build/*.ts build/**/*.ts",
+    "react-test": "react-scripts test",
+    "react-eject": "react-scripts eject",
+    "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\"",
+    "etsc": "tsc --esModuleInterop true public/electron.ts public/modules/preload.ts",
+    "build:win": "yarn tc && yarn react-build && electron-builder --win --x64",
+    "build:mac": "yarn tc && yarn react-build && electron-builder --mac",
+    "postinstall": "electron-builder install-app-deps && patch-package"
   },
   "eslintConfig": {
     "extends": [
@@ -33,36 +36,70 @@
     ]
   },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "cross-env": "^7.0.3",
+    "discord-rpc": "^3.2.0",
     "electron-is-dev": "^2.0.0",
+    "jotai": "^0.15.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.3",
-    "typescript": "^4.1.2",
-    "web-vitals": "^1.0.1"
+    "styled-components": "^5.2.1",
+    "electron-squirrel-startup": "^1.0.0",
+    "electron-window-state": "^5.0.3"
   },
   "devDependencies": {
+    "@types/styled-components": "^5.1.7",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/fs-extra": "9.0.7",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^14.14.31",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
     "concurrently": "^6.0.0",
     "electron": "^12.0.0",
     "electron-builder": "^22.10.5",
-    "wait-on": "^5.2.1"
+    "electron-builder-squirrel-windows": "^22.10.5",
+    "electron-devtools-installer": "^3.1.1",
+    "patch-package": "^6.4.5",
+    "typescript": "^4.2.3",
+    "wait-on": "^5.2.1",
+    "cross-env": "^7.0.3"
   },
-  "homepage": "./",
   "build": {
-    "appId": "com.example.electron-cra",
-    "files": [
-      "build/**/*",
-      "node_modules/**/*"
-    ],
+    "productName": "TART",
+    "appId": "com.electron.TART",
+    "asar": true,
     "directories": {
-      "buildResources": "assets"
+      "buildResources": "build_resource/",
+      "output": "app_build/"
+    },
+    "artifactName": "${productName} ${version} setup.${ext}",
+    "protocols": {
+      "name": "TART",
+      "schemes": [
+        "tart"
+      ]
+    },
+    "extraMetadata": {
+      "homepage": "https://github.com/hyp3rflow/tart"
+    },
+    "win": {
+      "target": [
+        "squirrel"
+      ],
+      "files": [
+        "build/**/*"
+      ]
+    },
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": [
+        "default"
+      ]
+    },
+    "dmg": {
+      "title": "TART"
     }
   }
 }
