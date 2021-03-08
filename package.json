@@ -38,7 +38,7 @@
   "dependencies": {
     "discord-rpc": "^3.2.0",
     "electron-is-dev": "^2.0.0",
-    "jotai": "^0.15.1",
+    "jotai": "^0.15.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.3",
