@@ -26,7 +26,7 @@ const MainContainer: React.FC = () => {
       <CurrentSchedule />
       <PendingSchedules />
       <HoverButton onClick={() => setOpened(!opened)} shadow></HoverButton>
-      <BottomMenu opened />
+      <BottomMenu opened={opened} />
     </>
   );
 };
