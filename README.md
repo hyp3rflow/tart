@@ -1,4 +1,4 @@
-# Widn
+# TART
 
 Show your current schedule on discord based on your calendar.
 
@@ -24,6 +24,9 @@ yarn electron-pack
     <td align="center">
         <a href="https://github.com/BeLeap"><img src="https://avatars.githubusercontent.com/u/46488521?s=460&u=de1a336b358d417729422352e64c6b7bcd1cff37&v=4" width="100px"/></a>
     </td>
+    <td align="center">
+        <a href="https://github.com/hanchaa"><img src="https://avatars.githubusercontent.com/u/46518263?s=460&u=2ecb3caaed9947d957fe23814641732ab11a0166&v=4" width="100px"/></a>
+    </td>
 </tr>
 <tr>
     <td align="center">
@@ -31,6 +34,9 @@ yarn electron-pack
     </td>
     <td align="center">
         <a href="https://github.com/BeLeap">BeLeap</a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/hanchaa">hanchaa</a>
     </td>
 </tr>
 </table>
