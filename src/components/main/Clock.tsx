@@ -23,9 +23,12 @@ const Clock: React.FC = () => {
   }, []);
 
   return (
-    <ClockWrapper>
-      {period} {displayHours}시 {minutes}분 {seconds}초
-    </ClockWrapper>
+    <div>
+      현재 시각
+      <ClockWrapper>
+        {period} {displayHours}시 {minutes}분 {seconds}초
+      </ClockWrapper>
+    </div>
   );
 };
 

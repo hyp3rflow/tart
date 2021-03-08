@@ -14,10 +14,14 @@ const CardWrapper = styled.div`
   }
 `;
 
-const Card: React.FC = (props) => {
-  const { children } = props;
+interface CardProps {
+  onClick?: () => void;
+}
 
-  return <CardWrapper>{children}</CardWrapper>;
+const Card: React.FC<CardProps> = (props) => {
+  const { children, onClick } = props;
+
+  return <CardWrapper onClick={onClick}>{children}</CardWrapper>;
 };
 
 export default Card;

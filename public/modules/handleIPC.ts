@@ -1,4 +1,7 @@
 import { ipcMain, BrowserWindow } from 'electron';
+import isDev from 'electron-is-dev';
+import path from 'path';
+import { createSettingsWindow } from './createSettings';
 
 ipcMain.on('window-close', (e) => {
   const window = BrowserWindow.getFocusedWindow();
@@ -15,4 +18,10 @@ ipcMain.on('window-maximize', (e) => {
 ipcMain.on('window-minimize', (e) => {
   const window = BrowserWindow.getFocusedWindow();
   window?.minimize();
+});
+
+ipcMain.on('openScheduleEdit', (e) => {
+  console.log('IPC :: openScheduleEdit called!');
+
+  createSettingsWindow();
 });

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Card from 'components/base/Card';
+import ScheduleItem from './ScheduleItem';
 
 const PendingSchedulesWrapper = styled.div`
   margin-top: 14px;
@@ -14,54 +14,69 @@ const PendingSchedulesWrapper = styled.div`
   }
 `;
 
-const ScheduleTitle = styled.div`
-  font-weight: 700;
-  font-size: 16px;
-`;
-
-const ScheduleTime = styled.div`
-  color: #adb5bd;
-`;
-
 const PendingSchedules: React.FC = () => {
   return (
     <PendingSchedulesWrapper>
-      <Card>
-        <ScheduleTitle>정보대학 감사원 회의</ScheduleTitle>
-        <ScheduleTime>오전 3시 (32분 이후)</ScheduleTime>
-      </Card>
-      <Card>
-        <ScheduleTitle>정보대학 감사원 회의</ScheduleTitle>
-        <ScheduleTime>오전 3시 (32분 이후)</ScheduleTime>
-      </Card>
-      <Card>
-        <ScheduleTitle>정보대학 감사원 회의</ScheduleTitle>
-        <ScheduleTime>오전 3시 (32분 이후)</ScheduleTime>
-      </Card>
-      <Card>
-        <ScheduleTitle>정보대학 감사원 회의</ScheduleTitle>
-        <ScheduleTime>오전 3시 (32분 이후)</ScheduleTime>
-      </Card>
-      <Card>
-        <ScheduleTitle>정보대학 감사원 회의</ScheduleTitle>
-        <ScheduleTime>오전 3시 (32분 이후)</ScheduleTime>
-      </Card>
-      <Card>
-        <ScheduleTitle>정보대학 감사원 회의</ScheduleTitle>
-        <ScheduleTime>오전 3시 (32분 이후)</ScheduleTime>
-      </Card>
-      <Card>
-        <ScheduleTitle>정보대학 감사원 회의</ScheduleTitle>
-        <ScheduleTime>오전 3시 (32분 이후)</ScheduleTime>
-      </Card>
-      <Card>
-        <ScheduleTitle>정보대학 감사원 회의</ScheduleTitle>
-        <ScheduleTime>오전 3시 (32분 이후)</ScheduleTime>
-      </Card>
-      <Card>
-        <ScheduleTitle>정보대학 감사원 회의 10</ScheduleTitle>
-        <ScheduleTime>오전 3시 (32분 이후)</ScheduleTime>
-      </Card>
+      <ScheduleItem
+        schedule={{
+          title: '정보대학 감사원 회의',
+          startTimestamp: new Date(),
+        }}
+      />
+      <ScheduleItem
+        schedule={{
+          title: '정보대학 감사원 회의',
+          startTimestamp: new Date(),
+        }}
+      />
+      <ScheduleItem
+        schedule={{
+          title: '정보대학 감사원 회의',
+          startTimestamp: new Date(),
+        }}
+      />
+      <ScheduleItem
+        schedule={{
+          title: '정보대학 감사원 회의',
+          startTimestamp: new Date(),
+        }}
+      />
+      <ScheduleItem
+        schedule={{
+          title: '정보대학 감사원 회의',
+          startTimestamp: new Date(),
+        }}
+      />
+      <ScheduleItem
+        schedule={{
+          title: '정보대학 감사원 회의',
+          startTimestamp: new Date(),
+        }}
+      />
+      <ScheduleItem
+        schedule={{
+          title: '정보대학 감사원 회의',
+          startTimestamp: new Date(),
+        }}
+      />
+      <ScheduleItem
+        schedule={{
+          title: '정보대학 감사원 회의',
+          startTimestamp: new Date(),
+        }}
+      />
+      <ScheduleItem
+        schedule={{
+          title: '정보대학 감사원 회의',
+          startTimestamp: new Date(),
+        }}
+      />
+      <ScheduleItem
+        schedule={{
+          title: '정보대학 감사원 회의',
+          startTimestamp: new Date(),
+        }}
+      />
     </PendingSchedulesWrapper>
   );
 };

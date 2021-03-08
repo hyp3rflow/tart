@@ -13,18 +13,19 @@ const startTimestamp = new Date();
 const endTimestamp = new Date();
 endTimestamp.setHours(endTimestamp.getHours() + 1);
 
-let details = '일정 중';
+const activityDetails = {
+  details: 'TART 실행 중',
+  state: '디스코드 연동 일정 관리 앱 TART!',
+  startTimestamp,
+  endTimestamp,
+  largeImageKey: 'melktert',
+  largeImageText: '일정 관리 앱 :: TART',
+  instance: false,
+};
 
 const setActivity = () => {
-  rpc.setActivity({
-    details: details,
-    state: '다음 일정: 산업기능요원 복무하기 (2년 동안)',
-    startTimestamp,
-    endTimestamp,
-    largeImageKey: 'melktert',
-    largeImageText: '일정 관리 앱 :: TART',
-    instance: false,
-  });
+  console.log('IPC :: setActivity Called!');
+  rpc.setActivity(activityDetails);
 };
 
 rpc.on('ready', () => {
@@ -33,10 +34,15 @@ rpc.on('ready', () => {
   setInterval(() => {
     console.log('TART :: rich-presence SEND');
     setActivity();
-  }, 1e3);
+  }, 3e3);
 });
 
-ipcMain.on('discord-on', (e) => {
-  console.log('IPC :: discord-on RECEIVED!');
-  details = '정보대학 상임위원회 회의!';
+ipcMain.on('changeCurrentSchedule', (event, ...args) => {
+  console.log('IPC :: changeCurrentSchedult Called!');
+
+  const { title, startTimestamp, endTimestamp } = args[0];
+
+  activityDetails.details = title;
+  activityDetails.startTimestamp = startTimestamp;
+  activityDetails.endTimestamp = endTimestamp;
 });
