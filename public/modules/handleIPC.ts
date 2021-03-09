@@ -1,6 +1,4 @@
 import { ipcMain, BrowserWindow } from 'electron';
-import isDev from 'electron-is-dev';
-import path from 'path';
 import { createSettingsWindow } from './createSettings';
 
 ipcMain.on('window-close', (e) => {
