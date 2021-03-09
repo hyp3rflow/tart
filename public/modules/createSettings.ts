@@ -42,12 +42,12 @@ export function createSettingsWindow() {
 
   if (isDev) {
     settingsWindow
-      .loadURL('http://localhost:3000')
+      .loadURL('http://localhost:3000/#/settings')
       .catch((error) => console.error(error));
     settingsWindow.webContents.openDevTools({ mode: 'undocked' });
   } else {
     const url = new URL(
-      `file://${path.join(__dirname, '../../build/index.html')}`
+      `file://${path.join(__dirname, '../../build/index.html')}#/settings`
     );
     settingsWindow
       .loadURL(url.toString())
