@@ -3,6 +3,7 @@ import windowStateKeeper from 'electron-window-state';
 import isDev from 'electron-is-dev';
 import path from 'path';
 
+let iconPath = path.join(__dirname, process.platform === "win32" ? "../../icon/icon.ico" : "../../icon/icon.png");
 let settingsWindow: BrowserWindow | undefined;
 
 export function createSettingsWindow() {
@@ -23,6 +24,7 @@ export function createSettingsWindow() {
     width: windowState.width,
     height: windowState.height,
     title: 'TART',
+    icon: iconPath,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
