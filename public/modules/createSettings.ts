@@ -15,7 +15,7 @@ export function createSettingsWindow() {
   const windowState = windowStateKeeper({
     defaultWidth: 1000,
     defaultHeight: 900,
-    file: 'mainWindow.json',
+    file: 'settingWindow.json',
   });
 
   settingsWindow = new BrowserWindow({
