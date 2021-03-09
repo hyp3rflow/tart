@@ -3,20 +3,26 @@ import styled from 'styled-components';
 import { VscChromeClose, VscChromeMinimize } from 'react-icons/vsc';
 
 const WindowFrameWrapper = styled.div`
-  -webkit-app-region: drag;
-
-  width: calc(100vw - 5px);
-  height: 25px;
-  margin-left: 5px;
-  margin-top: 5px;
+  width: 100vw;
+  height: 30px;
   background-color: #343a40;
 
   display: flex;
   align-items: center;
 `;
 
+const DragArea = styled.div`
+  -webkit-app-region: drag;
+
+  margin-top: 5px;
+  margin-left: 5px;
+
+  height: 25px;
+  width: calc(100vw - 95px);
+`;
+
 const WindowTitle = styled.p`
-  padding-left: 10px;
+  padding-left: 5px;
   font-size: 14px;
   font-weight: 300;
   color: #adb5bd;
@@ -78,7 +84,9 @@ const WindowFrame: React.FC = () => {
 
   return (
     <WindowFrameWrapper>
-      <WindowTitle>TART</WindowTitle>
+      <DragArea>
+        <WindowTitle>TART</WindowTitle>
+      </DragArea>
       <FrameButtonWrapper>
         <FrameButton onClick={onMinimize} onMouseOver={onMinimizeMouseOver} onMouseLeave={onMinimizeMouseLeave}
                      ref={minimizeRef}>
