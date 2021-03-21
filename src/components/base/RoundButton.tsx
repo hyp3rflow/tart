@@ -1,5 +1,4 @@
-import React from 'react';
-import styled, { css, CSSProperties } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 interface ButtonProps {
   width?: string;
@@ -49,15 +48,4 @@ const Button = styled.button<ButtonProps>`
   }
 `;
 
-interface RoundButtonProps extends ButtonProps {
-  onClick: (...args: any[]) => void;
-  style?: CSSProperties;
-}
-
-const RoundButton: React.FC<RoundButtonProps> = (props) => {
-  const { children } = props;
-
-  return <Button {...props}>{children}</Button>;
-};
-
-export default RoundButton;
+export default Button;
