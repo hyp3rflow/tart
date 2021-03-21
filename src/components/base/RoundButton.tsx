@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-interface ButtonProps {
+interface RoundButtonProps {
   width?: string;
   height?: string;
   margin?: string;
@@ -13,7 +13,7 @@ interface ButtonProps {
   shadow?: boolean;
 }
 
-const Button = styled.button<ButtonProps>`
+const RoundButton = styled.button<RoundButtonProps>`
   width: ${(props) => props.width || 'auto'};
   height: ${(props) => props.height || '50px'};
   padding: ${(props) => props.padding || '14px 18px'};
@@ -48,4 +48,4 @@ const Button = styled.button<ButtonProps>`
   }
 `;
 
-export default Button;
+export default RoundButton;
