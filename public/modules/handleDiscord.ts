@@ -37,10 +37,8 @@ rpc.on('ready', () => {
   }, 3e3);
 });
 
-ipcMain.on('changeCurrentSchedule', (event, ...args) => {
-  console.log('IPC :: changeCurrentSchedult Called!');
-
-  const { title, startTimestamp, endTimestamp } = args[0];
+ipcMain.on('changeCurrentSchedule', (event, title, startTimestamp, endTimestamp) => {
+  console.log('IPC :: changeCurrentSchedule Called!');
 
   activityDetails.details = title;
   activityDetails.startTimestamp = startTimestamp;

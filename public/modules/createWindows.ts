@@ -3,6 +3,7 @@ import windowStateKeeper from 'electron-window-state';
 import isDev from 'electron-is-dev';
 import path from 'path';
 
+let iconPath = path.join(__dirname, process.platform === "win32" ? "../../icon/icon.ico" : "../../icon/icon.png");
 let mainWindow: BrowserWindow | undefined;
 
 export function createMainWindow() {
@@ -25,6 +26,7 @@ export function createMainWindow() {
     minWidth: 400,
     minHeight: 800,
     title: 'TART',
+    icon: iconPath,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,

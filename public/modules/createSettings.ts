@@ -3,6 +3,7 @@ import windowStateKeeper from 'electron-window-state';
 import isDev from 'electron-is-dev';
 import path from 'path';
 
+let iconPath = path.join(__dirname, process.platform === "win32" ? "../../icon/icon.ico" : "../../icon/icon.png");
 let settingsWindow: BrowserWindow | undefined;
 
 export function createSettingsWindow() {
@@ -14,7 +15,7 @@ export function createSettingsWindow() {
   const windowState = windowStateKeeper({
     defaultWidth: 1000,
     defaultHeight: 900,
-    file: 'mainWindow.json',
+    file: 'settingWindow.json',
   });
 
   settingsWindow = new BrowserWindow({
@@ -23,6 +24,7 @@ export function createSettingsWindow() {
     width: windowState.width,
     height: windowState.height,
     title: 'TART',
+    icon: iconPath,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
@@ -40,12 +42,12 @@ export function createSettingsWindow() {
 
   if (isDev) {
     settingsWindow
-      .loadURL('http://localhost:3000')
+      .loadURL('http://localhost:3000/#/settings')
       .catch((error) => console.error(error));
     settingsWindow.webContents.openDevTools({ mode: 'undocked' });
   } else {
     const url = new URL(
-      `file://${path.join(__dirname, '../../build/index.html')}`
+      `file://${path.join(__dirname, '../../build/index.html')}#/settings`
     );
     settingsWindow
       .loadURL(url.toString())
