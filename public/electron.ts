@@ -2,6 +2,7 @@ import { app } from 'electron';
 import isDev from 'electron-is-dev';
 import { createMainWindow } from './modules/createWindows';
 import './modules/handleIPC';
+import './modules/handleDiscord';
 
 if (require('electron-squirrel-startup')) app.quit();
 
@@ -17,7 +18,7 @@ app.on('ready', () => {
   if (isDev) {
     const {
       default: installExtension,
-      REACT_DEVELOPER_TOOLS
+      REACT_DEVELOPER_TOOLS,
     } = require('electron-devtools-installer');
 
     installExtension(REACT_DEVELOPER_TOOLS)

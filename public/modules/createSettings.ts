@@ -4,27 +4,25 @@ import isDev from 'electron-is-dev';
 import path from 'path';
 
 let iconPath = path.join(__dirname, process.platform === "win32" ? "../../icon/icon.ico" : "../../icon/icon.png");
-let mainWindow: BrowserWindow | undefined;
+let settingsWindow: BrowserWindow | undefined;
 
-export function createMainWindow() {
-  if (mainWindow !== undefined) {
-    mainWindow.show();
+export function createSettingsWindow() {
+  if (settingsWindow !== undefined) {
+    settingsWindow.show();
     return;
   }
 
   const windowState = windowStateKeeper({
-    defaultWidth: 400,
+    defaultWidth: 1000,
     defaultHeight: 900,
-    file: 'mainWindow.json',
+    file: 'settingWindow.json',
   });
 
-  mainWindow = new BrowserWindow({
+  settingsWindow = new BrowserWindow({
     x: windowState.x,
     y: windowState.y,
     width: windowState.width,
     height: windowState.height,
-    minWidth: 400,
-    minHeight: 800,
     title: 'TART',
     icon: iconPath,
     webPreferences: {
@@ -35,30 +33,32 @@ export function createMainWindow() {
       preload: path.join(__dirname, 'preload.js'),
     },
     show: false,
-    resizable: true,
+    resizable: false,
     backgroundColor: '#fff',
     frame: false,
   });
 
-  windowState.manage(mainWindow);
+  windowState.manage(settingsWindow);
 
   if (isDev) {
-    mainWindow
-      .loadURL('http://localhost:3000')
+    settingsWindow
+      .loadURL('http://localhost:3000/#/settings')
       .catch((error) => console.error(error));
-    mainWindow.webContents.openDevTools({ mode: 'undocked' });
+    settingsWindow.webContents.openDevTools({ mode: 'undocked' });
   } else {
     const url = new URL(
-      `file://${path.join(__dirname, '../../build/index.html')}`
+      `file://${path.join(__dirname, '../../build/index.html')}#/settings`
     );
-    mainWindow.loadURL(url.toString()).catch((error) => console.error(error));
+    settingsWindow
+      .loadURL(url.toString())
+      .catch((error) => console.error(error));
   }
 
-  mainWindow.once('ready-to-show', () => {
-    mainWindow?.show();
+  settingsWindow.once('ready-to-show', () => {
+    settingsWindow?.show();
   });
 
-  mainWindow.once('closed', () => {
-    mainWindow = undefined;
+  settingsWindow.once('closed', () => {
+    settingsWindow = undefined;
   });
 }

@@ -1,15 +1,16 @@
 import { createGlobalStyle } from 'styled-components';
+import { ColorPalette } from 'utils/ColorUtils';
 
 export default createGlobalStyle`
-    html {
+  html {
     font-size: 16px;
     height: 100%;
   }
 
   body {
-    background: #f8f9fa;
+    background: ${ColorPalette.GRAY_BACKGROUND};
     min-height: 100%;
-    color: #222222;
+    color: ${ColorPalette.WHITE};
 
     margin: 0;
     padding: 0;
@@ -51,12 +52,28 @@ export default createGlobalStyle`
     margin: 0;
 
     ::selection {
-      background: #222222;
-      color: #f1f3f5;
+      background: ${ColorPalette.GRAY_BACKGROUND};
+      color: ${ColorPalette.WHITE};
     }
   }
 
-  #root {
-    overflow-y: auto;
+  ::-webkit-scrollbar {
+    background: none;
+    
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    border: solid 2px transparent;
+    box-shadow: 0 0 10px 10px #2c2f33 inset;
+  }
+
+  ::-webkit-scrollbar:window-inactive {
+    width: 0;
+  }
+  
+  ::-webkit-scrollbar-thumb:window-inactive{
+    background: none;
   }
 `;
