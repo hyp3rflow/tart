@@ -7668,10 +7668,10 @@ joi@^17.3.0:
     "@sideway/formula" "^3.0.0"
     "@sideway/pinpoint" "^2.0.0"
 
-jotai@^0.15.1:
-  version "0.15.1"
-  resolved "https://registry.yarnpkg.com/jotai/-/jotai-0.15.1.tgz#31d04b38c7eb0b0b33552c3d0009cb01cd1a68fe"
-  integrity sha512-ffC+CGYLyV6CiWZ2Pm2XcySzH3+AhaIdGN2LTmpOrbFQqH+JBPHQTRqw0G9ys7/6xhzhWDvBASigTaQQGEBubA==
+jotai@^0.15.3:
+  version "0.15.3"
+  resolved "https://registry.yarnpkg.com/jotai/-/jotai-0.15.3.tgz#323dcdc2b1a7f7ec777997b2d827e61bada2ede3"
+  integrity sha512-4+0Ie61mSQjyEuh/vCKKr7JFclDe/9DxV2rhzGRRZwnCcmgld8AdGX9BnRqfjMedyYpS3qATzLjIcCG0CopgMg==
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
