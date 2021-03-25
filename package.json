@@ -51,7 +51,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^13.0.6",
+    "@testing-library/user-event": "^13.0.16",
     "@types/discord-rpc": "^3.0.4",
     "@types/react-router-dom": "^5.1.7",
     "@types/fs-extra": "9.0.7",
