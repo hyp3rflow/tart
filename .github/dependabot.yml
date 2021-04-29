@@ -1,0 +1,75 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: weekly
+    time: "20:00"
+  open-pull-requests-limit: 10
+  target-branch: develop
+  reviewers:
+  - BeLeap
+  - hanchaa
+  - hyp3rflow
+  ignore:
+  - dependency-name: "@testing-library/user-event"
+    versions:
+    - 12.8.3
+    - 13.0.0
+    - 13.0.1
+    - 13.0.10
+    - 13.0.11
+    - 13.0.16
+    - 13.0.2
+    - 13.0.7
+    - 13.1.1
+    - 13.1.2
+  - dependency-name: concurrently
+    versions:
+    - 6.0.1
+  - dependency-name: jotai
+    versions:
+    - 0.15.2
+    - 0.15.5
+    - 0.16.0
+  - dependency-name: "@types/fs-extra"
+    versions:
+    - 9.0.10
+    - 9.0.8
+    - 9.0.9
+  - dependency-name: "@types/node"
+    versions:
+    - 14.14.31
+    - 14.14.32
+    - 14.14.33
+    - 14.14.34
+    - 14.14.36
+    - 14.14.37
+  - dependency-name: "@types/jest"
+    versions:
+    - 26.0.21
+    - 26.0.22
+  - dependency-name: "@testing-library/jest-dom"
+    versions:
+    - 5.11.10
+  - dependency-name: electron
+    versions:
+    - 12.0.2
+  - dependency-name: react-dom
+    versions:
+    - 17.0.2
+  - dependency-name: react
+    versions:
+    - 17.0.2
+  - dependency-name: "@types/react-dom"
+    versions:
+    - 17.0.3
+  - dependency-name: "@types/discord-rpc"
+    versions:
+    - 3.0.5
+  - dependency-name: "@types/styled-components"
+    versions:
+    - 5.1.8
+  - dependency-name: patch-package
+    versions:
+    - 6.4.6
