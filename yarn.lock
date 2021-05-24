@@ -7681,10 +7681,10 @@ joi@^17.3.0:
     "@sideway/formula" "^3.0.0"
     "@sideway/pinpoint" "^2.0.0"
 
-jotai@^0.15.3:
-  version "0.15.3"
-  resolved "https://registry.yarnpkg.com/jotai/-/jotai-0.15.3.tgz#323dcdc2b1a7f7ec777997b2d827e61bada2ede3"
-  integrity sha512-4+0Ie61mSQjyEuh/vCKKr7JFclDe/9DxV2rhzGRRZwnCcmgld8AdGX9BnRqfjMedyYpS3qATzLjIcCG0CopgMg==
+jotai@^0.16.6:
+  version "0.16.6"
+  resolved "https://registry.yarnpkg.com/jotai/-/jotai-0.16.6.tgz#338b00fd1f9d19ece6dd31ea1c392a34522911d8"
+  integrity sha512-jXD/ZFqsnFrZhYH04PmhVhmq+kOFa1PxjkE9Woyj5fESCPYEBLV/rhf4zRlrqq5jOMgQCQaL7KlY+BsOJoyVKA==
 
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
