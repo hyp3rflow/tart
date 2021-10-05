@@ -8,18 +8,18 @@ interface WindowTemplateWrapperProps {
 }
 
 const WindowTemplateWrapper = styled.div<WindowTemplateWrapperProps>`
-  width: ${(props) => props.width || '100%'};
-  padding: ${(props) => props.padding || '14px'};
-  background-color: ${(props) => props.backgroundColor || '#343a40'};
+  width: ${props => props.width || '100%'};
+  padding: ${props => props.padding || '14px'};
+  background-color: ${props => props.backgroundColor || '#343a40'};
 
   display: flex;
   flex-direction: column;
   height: calc(100vh - 30px);
 `;
 
-interface WindowTemplateProps extends WindowTemplateWrapperProps {}
+type WindowTemplateProps = WindowTemplateWrapperProps;
 
-const WindowTemplate: React.FC<WindowTemplateProps> = (props) => {
+const WindowTemplate: React.FC<WindowTemplateProps> = props => {
   const { children } = props;
 
   return <WindowTemplateWrapper {...props}>{children}</WindowTemplateWrapper>;

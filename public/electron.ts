@@ -1,5 +1,9 @@
 import { app } from 'electron';
 import isDev from 'electron-is-dev';
+import installExtension, {
+  REACT_DEVELOPER_TOOLS,
+} from 'electron-devtools-installer';
+
 import { createMainWindow } from './modules/createWindows';
 import './modules/handleIPC';
 import './modules/handleDiscord';
@@ -16,11 +20,6 @@ app.on('ready', () => {
   createMainWindow();
 
   if (isDev) {
-    const {
-      default: installExtension,
-      REACT_DEVELOPER_TOOLS,
-    } = require('electron-devtools-installer');
-
     installExtension(REACT_DEVELOPER_TOOLS)
       .then((name: string) => console.log(`extension: ${name} added`))
       .catch((err: any) => console.log(`extension: ${err}`));

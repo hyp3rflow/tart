@@ -14,24 +14,24 @@ interface RoundButtonProps {
 }
 
 const RoundButton = styled.button<RoundButtonProps>`
-  width: ${(props) => props.width || 'auto'};
-  height: ${(props) => props.height || '50px'};
-  padding: ${(props) => props.padding || '14px 18px'};
-  margin: ${(props) => props.margin || '0'};
-  background-color: ${(props) => props.backgroundColor || '#495057'};
-  color: ${(props) => props.color || 'inherit'};
+  width: ${props => props.width || 'auto'};
+  height: ${props => props.height || '50px'};
+  padding: ${props => props.padding || '14px 18px'};
+  margin: ${props => props.margin || '0'};
+  background-color: ${props => props.backgroundColor || '#495057'};
+  color: ${props => props.color || 'inherit'};
   border-radius: 500px;
   font-size: 16px;
 
   transition: all 0.1s ease 0s;
 
-  ${(props) =>
+  ${props =>
     props.shadow &&
     css`
       box-shadow: rgb(20, 20, 20, 30%) 2px 7px 16px 0px;
     `};
 
-  ${(props) =>
+  ${props =>
     props.flex &&
     css`
       display: flex;
@@ -40,11 +40,11 @@ const RoundButton = styled.button<RoundButtonProps>`
     `}
 
   &:hover {
-    background-color: ${(props) => props.onHoverBackgroundColor || '#565f69'};
+    background-color: ${props => props.onHoverBackgroundColor || '#565f69'};
   }
 
   &:active {
-    background-color: ${(props) => props.onActiveBackgroundColor || '#41454a'};
+    background-color: ${props => props.onActiveBackgroundColor || '#41454a'};
   }
 `;
 

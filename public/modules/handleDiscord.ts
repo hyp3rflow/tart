@@ -1,5 +1,6 @@
 import { ipcMain } from 'electron';
-import DiscordRPC from 'discord-rpc';
+import * as DiscordRPC from 'discord-rpc';
+
 import { CLIENT_ID } from '../constants';
 
 DiscordRPC.register(CLIENT_ID);
@@ -37,10 +38,13 @@ rpc.on('ready', () => {
   }, 3e3);
 });
 
-ipcMain.on('changeCurrentSchedule', (event, title, startTimestamp, endTimestamp) => {
-  console.log('IPC :: changeCurrentSchedule Called!');
+ipcMain.on(
+  'changeCurrentSchedule',
+  (event, title, _startTimestamp, _endTimestamp) => {
+    console.log('IPC :: changeCurrentSchedule Called!');
 
-  activityDetails.details = title;
-  activityDetails.startTimestamp = startTimestamp;
-  activityDetails.endTimestamp = endTimestamp;
-});
+    activityDetails.details = title;
+    activityDetails.startTimestamp = _startTimestamp;
+    activityDetails.endTimestamp = _endTimestamp;
+  }
+);
