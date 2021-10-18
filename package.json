@@ -18,7 +18,8 @@
     "postinstall": "electron-builder install-app-deps && patch-package",
     "lint": "tsc --project tsconfig.json --noEmit && eslint . --ext .ts,.tsx",
     "lint:fix": "yarn lint --fix",
-    "storybook": "yarn start-storybook -p 6006"
+    "storybook": "yarn start-storybook -p 6006",
+    "build:sb": "build-storybook"
   },
   "eslintConfig": {
     "extends": [
