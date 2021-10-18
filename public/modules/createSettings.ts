@@ -3,7 +3,10 @@ import windowStateKeeper from 'electron-window-state';
 import isDev from 'electron-is-dev';
 import path from 'path';
 
-let iconPath = path.join(__dirname, process.platform === "win32" ? "../../icon/icon.ico" : "../../icon/icon.png");
+const iconPath = path.join(
+  __dirname,
+  process.platform === 'win32' ? '../../icon/icon.ico' : '../../icon/icon.png'
+);
 let settingsWindow: BrowserWindow | undefined;
 
 export function createSettingsWindow() {
@@ -28,7 +31,6 @@ export function createSettingsWindow() {
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
-      enableRemoteModule: true,
       devTools: isDev,
       preload: path.join(__dirname, 'preload.js'),
     },
@@ -43,15 +45,13 @@ export function createSettingsWindow() {
   if (isDev) {
     settingsWindow
       .loadURL('http://localhost:3000/#/settings')
-      .catch((error) => console.error(error));
+      .catch(error => console.error(error));
     settingsWindow.webContents.openDevTools({ mode: 'undocked' });
   } else {
     const url = new URL(
       `file://${path.join(__dirname, '../../build/index.html')}#/settings`
     );
-    settingsWindow
-      .loadURL(url.toString())
-      .catch((error) => console.error(error));
+    settingsWindow.loadURL(url.toString()).catch(error => console.error(error));
   }
 
   settingsWindow.once('ready-to-show', () => {

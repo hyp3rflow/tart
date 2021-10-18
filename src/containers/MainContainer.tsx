@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+
 import Header from 'components/main/Header';
 import Clock from 'components/main/Clock';
 import CurrentSchedule from 'components/main/CurrentSchedule';

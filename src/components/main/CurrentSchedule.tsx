@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+
 import { ColorPalette } from 'utils/ColorUtils';
 import Card from 'components/base/Card';
 
@@ -39,7 +40,7 @@ const CurrentSchedule: React.FC = () => {
       <ScheduleTime>현재 진행 중인 일정</ScheduleTime>
       <ScheduleInput
         value={currentSchedule.title}
-        onChange={(e) => {
+        onChange={e => {
           setCurrentSchedule({
             ...currentSchedule,
             title: e.currentTarget.value,

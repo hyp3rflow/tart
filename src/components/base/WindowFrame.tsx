@@ -54,7 +54,7 @@ const FrameButton = styled.button<FrameButtonProps>`
   }
 
   &:hover {
-    background: ${(props) => props.isClose && '#fa5252'};
+    background: ${props => props.isClose && '#fa5252'};
   }
 `;
 
@@ -66,20 +66,17 @@ const WindowFrame: React.FC = () => {
   };
 
   const onMinimize = () => {
-    if (minimizeRef.current)
-      minimizeRef.current.style.background = 'none';
+    if (minimizeRef.current) minimizeRef.current.style.background = 'none';
 
     window.ipcAPI.send('window-minimize');
   };
 
   const onMinimizeMouseOver = () => {
-    if (minimizeRef.current)
-      minimizeRef.current.style.background = '#495057';
+    if (minimizeRef.current) minimizeRef.current.style.background = '#495057';
   };
 
   const onMinimizeMouseLeave = () => {
-    if (minimizeRef.current)
-      minimizeRef.current.style.background = 'none';
+    if (minimizeRef.current) minimizeRef.current.style.background = 'none';
   };
 
   return (
@@ -88,8 +85,12 @@ const WindowFrame: React.FC = () => {
         <WindowTitle>TART</WindowTitle>
       </DragArea>
       <FrameButtonWrapper>
-        <FrameButton onClick={onMinimize} onMouseOver={onMinimizeMouseOver} onMouseLeave={onMinimizeMouseLeave}
-                     ref={minimizeRef}>
+        <FrameButton
+          onClick={onMinimize}
+          onMouseOver={onMinimizeMouseOver}
+          onMouseLeave={onMinimizeMouseLeave}
+          ref={minimizeRef}
+        >
           <VscChromeMinimize />
         </FrameButton>
         <FrameButton onClick={onClose} isClose>

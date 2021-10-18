@@ -3,7 +3,10 @@ import windowStateKeeper from 'electron-window-state';
 import isDev from 'electron-is-dev';
 import path from 'path';
 
-let iconPath = path.join(__dirname, process.platform === "win32" ? "../../icon/icon.ico" : "../../icon/icon.png");
+const iconPath = path.join(
+  __dirname,
+  process.platform === 'win32' ? '../../icon/icon.ico' : '../../icon/icon.png'
+);
 let mainWindow: BrowserWindow | undefined;
 
 export function createMainWindow() {
@@ -30,7 +33,6 @@ export function createMainWindow() {
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
-      enableRemoteModule: true,
       devTools: isDev,
       preload: path.join(__dirname, 'preload.js'),
     },
@@ -45,13 +47,13 @@ export function createMainWindow() {
   if (isDev) {
     mainWindow
       .loadURL('http://localhost:3000')
-      .catch((error) => console.error(error));
+      .catch(error => console.error(error));
     mainWindow.webContents.openDevTools({ mode: 'undocked' });
   } else {
     const url = new URL(
       `file://${path.join(__dirname, '../../build/index.html')}`
     );
-    mainWindow.loadURL(url.toString()).catch((error) => console.error(error));
+    mainWindow.loadURL(url.toString()).catch(error => console.error(error));
   }
 
   mainWindow.once('ready-to-show', () => {

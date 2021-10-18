@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import RoundButton from 'components/base/RoundButton';
 import { VscSettingsGear } from 'react-icons/vsc';
+
+import RoundButton from 'components/base/RoundButton';
 
 const MainHeader = styled.div`
   display: flex;

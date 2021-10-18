@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+
 import Card from 'components/base/Card';
 import { Schedule } from 'models/schedule';
 
@@ -28,7 +29,7 @@ interface ScheduleItemProps {
   schedule: Schedule;
 }
 
-const ScheduleItem: React.FC<ScheduleItemProps> = (props) => {
+const ScheduleItem: React.FC<ScheduleItemProps> = props => {
   const { title, startTimestamp, endTimestamp } = props.schedule;
   const [open, setOpen] = useState(false);
 

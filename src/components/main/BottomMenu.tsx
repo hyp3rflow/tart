@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import RoundButton from 'components/base/RoundButton';
 
 const StyledButton = styled(RoundButton)`
@@ -17,7 +18,7 @@ const ButtonListWrapper = styled.div<ButtonListWrapperProps>`
   overflow: hidden;
   flex-shrink: 0;
 
-  height: ${(props) => (props.isOpened ? '64px' : '0px')};
+  height: ${props => (props.isOpened ? '64px' : '0px')};
 
   transition: height 0.25s linear;
 
@@ -30,7 +31,7 @@ interface BottomMenuProps {
   opened: boolean;
 }
 
-const BottomMenu: React.FC<BottomMenuProps> = (props) => {
+const BottomMenu: React.FC<BottomMenuProps> = props => {
   const { opened } = props;
 
   return (
