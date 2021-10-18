@@ -17,7 +17,8 @@
     "build:mac": "yarn tc && yarn react-build && electron-builder --mac",
     "postinstall": "electron-builder install-app-deps && patch-package",
     "lint": "tsc --project tsconfig.json --noEmit && eslint . --ext .ts,.tsx",
-    "lint:fix": "yarn lint --fix"
+    "lint:fix": "yarn lint --fix",
+    "storybook": "yarn start-storybook -p 6006"
   },
   "eslintConfig": {
     "extends": [
@@ -48,10 +49,13 @@
     "react-dom": "^17.0.1",
     "react-icons": "^4.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^4.0.3",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/react": "^6.3.12",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^13.0.6",
@@ -81,6 +85,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "patch-package": "^6.4.5",
     "prettier": "^2.4.1",
+    "tsconfig-paths-webpack-plugin": "^3.5.1",
     "typescript": "^4.2.3",
     "wait-on": "^5.2.1"
   },
