@@ -28,13 +28,6 @@ const CurrentSchedule: React.FC = () => {
     title: 'TART 실행 중',
   });
 
-  useEffect(() => {
-    window.ipcAPI.send('changeCurrentSchedule', {
-      ...currentSchedule,
-      startTimestamp: new Date(),
-    });
-  }, [currentSchedule]);
-
   return (
     <Card>
       <ScheduleTime>현재 진행 중인 일정</ScheduleTime>
